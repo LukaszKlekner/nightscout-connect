@@ -23,11 +23,11 @@
        - name: Run sync
          env:
            CONNECT_SOURCE: minimedcarelink
-           CONNECT_COUNTRY_CODE: pl
-           CONNECT_CARELINK_COUNTRY: pl
-           CONNECT_CARELINK_REGION: ${{ secrets.CONNECT_CARELINK_REGION }}
+           CONNECT_CARELINK_REGION: eu
            CONNECT_CARELINK_USERNAME: ${{ secrets.CONNECT_CARELINK_USERNAME }}
            CONNECT_CARELINK_PASSWORD: ${{ secrets.CONNECT_CARELINK_PASSWORD }}
+           CONNECT_COUNTRY_CODE: pl
+           CONNECT_LANGUAGE_CODE: en
            CONNECT_NIGHTSCOUT_ENDPOINT: ${{ secrets.CONNECT_NIGHTSCOUT_ENDPOINT }}
            CONNECT_API_SECRET: ${{ secrets.CONNECT_API_SECRET }}
-         run: timeout 90s node bin/nightscout-connect forever minimedcarelink || true
+         run: timeout 120s node bin/nightscout-connect forever minimedcarelink || true
