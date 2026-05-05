@@ -22,10 +22,10 @@
          
        - name: Run sync
          env:
-           CONNECT_SOURCE: linkup
-           CONNECT_LINK_UP_REGION: ${{ secrets.CONNECT_LINK_UP_REGION }}
-           CONNECT_LINK_UP_USERNAME: ${{ secrets.CONNECT_LINK_UP_USERNAME }}
-           CONNECT_LINK_UP_PASSWORD: ${{ secrets.CONNECT_LINK_UP_PASSWORD }}
+           CONNECT_SOURCE: minimedcarelink
+           CONNECT_CARELINK_REGION: ${{ secrets.CONNECT_CARELINK_REGION }}
+           CONNECT_CARELINK_USERNAME: ${{ secrets.CONNECT_CARELINK_USERNAME }}
+           CONNECT_CARELINK_PASSWORD: ${{ secrets.CONNECT_CARELINK_PASSWORD }}
            CONNECT_NIGHTSCOUT_ENDPOINT: ${{ secrets.CONNECT_NIGHTSCOUT_ENDPOINT }}
            CONNECT_API_SECRET: ${{ secrets.CONNECT_API_SECRET }}
-         run: timeout 60s node bin/nightscout-connect forever linkup || true
+         run: timeout 90s node bin/nightscout-connect forever minimedcarelink || true
