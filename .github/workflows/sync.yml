@@ -27,4 +27,4 @@
            LINK_UP_PASSWORD: ${{ secrets.LINK_UP_PASSWORD }}
            NIGHTSCOUT_URL: ${{ secrets.NIGHTSCOUT_URL }}
            NIGHTSCOUT_API_SECRET: ${{ secrets.NIGHTSCOUT_API_SECRET }}
-         run: node bin/nightscout-connect launch
+         run: node bin/nightscout-connect --help
