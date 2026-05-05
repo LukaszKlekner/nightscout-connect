@@ -26,5 +26,5 @@
            LINK_UP_USERNAME: ${{ secrets.LINK_UP_USERNAME }}
            LINK_UP_PASSWORD: ${{ secrets.LINK_UP_PASSWORD }}
            NIGHTSCOUT_URL: ${{ secrets.NIGHTSCOUT_URL }}
-           NIGHTSCOUT_API_SECRET: ${{ secrets.NIGHTSCOUT_API_SECRET }}
-         run: timeout 60s node bin/nightscout-connect forever linkup || true
+           API_SECRET: ${{ secrets.NIGHTSCOUT_API_SECRET }}
+         run: timeout 60s node bin/nightscout-connect forever linkup --nightscout-url "$NIGHTSCOUT_URL" --api-secret "$API_SECRET" || true
