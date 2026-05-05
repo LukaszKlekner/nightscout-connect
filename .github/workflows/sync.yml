@@ -23,7 +23,7 @@
        - name: Run sync
          env:
            CONNECT_SOURCE: minimedcarelink
-           CONNECT_COUNTRY_CODE: ${{ secrets.CONNECT_COUNTRY_CODE }}
+           CONNECT_CARELINK_COUNTRY_CODE: ${{ secrets.CONNECT_COUNTRY_CODE }}
            CONNECT_CARELINK_REGION: ${{ secrets.CONNECT_CARELINK_REGION }}
            CONNECT_CARELINK_USERNAME: ${{ secrets.CONNECT_CARELINK_USERNAME }}
            CONNECT_CARELINK_PASSWORD: ${{ secrets.CONNECT_CARELINK_PASSWORD }}
