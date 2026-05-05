@@ -1,4 +1,3 @@
-
 const { createMachine, Machine, actions, interpret, spawn  } = require('xstate');
 var testImpl = require('../testable_driver');
 var axios = require('axios');
@@ -39,7 +38,17 @@ function main (argv) {
   // 
   var output = { name: 'nightscout', url: argv.nightscoutEndpoint, apiSecret: argv.apiSecret };
   console.log("CONFIGURED OUTPUT", output);
-  var input = { kind: argv.source, url: argv.sourceEndpoint, apiSecret: argv.sourceApiSecret };
+
+  var input = { 
+   kind: argv.source, 
+   url: argv.sourceEndpoint, 
+   apiSecret: argv.sourceApiSecret,
+   carelinkUsername: argv.carelinkUsername,
+   carelinkPassword: argv.carelinkPassword,
+   carelinkRegion: argv.carelinkRegion || 'eu',
+   countryCode: argv.countryCode || 'pl',
+   languageCode: argv.languageCode || 'en'
+ };
   console.log("CONFIGURED INPUT", input);
 
   var things = sidecarLoop(input, output);
